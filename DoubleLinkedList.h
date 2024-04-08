@@ -21,9 +21,39 @@ public:
 
     void unshift(T data);
     void push(T data);
+    void pop();
+    void shift();
 
     void show();
 };
+
+template<typename T>
+void DoubleLinkedList<T>::shift() {
+    if(!head){
+        return;
+    }
+    if (head == tail) {
+        head = tail = nullptr;
+    } else {
+        head = head->next;
+        head->previous.reset();
+    }
+    --size;
+}
+
+template<typename T>
+void DoubleLinkedList<T>::pop() {
+    if(!tail){
+        return;
+    }
+    if(head == tail){
+        head = tail = nullptr;
+    }else{
+        tail = tail->previous.lock();
+        tail->next = nullptr;
+    }
+    --size;
+}
 
 template<typename T>
 void DoubleLinkedList<T>::show() {

@@ -7,5 +7,7 @@ int main() {
     list.show();
     list.unshift(2);
     list.show();
+    list.pop();
+    list.show();
     return 0;
 }
