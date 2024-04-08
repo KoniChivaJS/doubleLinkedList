@@ -21,7 +21,19 @@ public:
 
     void unshift(T data);
     void push(T data);
+
+    void show();
 };
+
+template<typename T>
+void DoubleLinkedList<T>::show() {
+    shared_ptr<Node<T>> current = head;
+    while (current){
+        cout<<current->data<<" ";
+        current = current->next;
+    }
+    cout<<endl;
+}
 
 template<typename T>
 void DoubleLinkedList<T>::push(T data) {
