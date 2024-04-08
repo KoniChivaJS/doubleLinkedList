@@ -18,4 +18,5 @@ namespace double_node{
     };
 }
 
+
 #endif //DOUBLELINKEDLIST_DOUBLENODE_H

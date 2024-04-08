@@ -4,4 +4,6 @@ project(doubleLinkedList)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(doubleLinkedList main.cpp
-        DoubleNode.h)
+        DoubleNode.h
+        DoubleLinkedList.cpp
+        DoubleLinkedList.h)
