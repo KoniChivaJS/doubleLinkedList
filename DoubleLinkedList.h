@@ -28,8 +28,21 @@ public:
     void atInsert(int index,T data);
     void atRemove(int index);
     bool isEmpty();
+    bool search(T data);
     void show();
 };
+
+template<typename T>
+bool DoubleLinkedList<T>::search(T data) {
+    shared_ptr<Node<T>> current = head;
+    while (current) {
+        if (current->data == data) {
+            return true;
+        }
+        current = current->next;
+    }
+    return false;
+}
 
 template<typename T>
 bool DoubleLinkedList<T>::isEmpty() {
